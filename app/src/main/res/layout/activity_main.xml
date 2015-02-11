@@ -1,0 +1,258 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Connect"
+        android:id="@+id/btnConnect"
+        android:onClick="onBtnConnectTap"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnArmTakeOff"
+        android:layout_column="1"
+        android:visibility="invisible"
+        android:onClick="onArmButtonTap"
+        android:layout_below="@+id/btnConnect"
+        android:layout_centerHorizontal="true" />
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/btnArmTakeOff">
+
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/vehTelemRow1">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Mode:"
+                android:id="@+id/vehicleModeLabelTextView"
+                android:layout_column="0"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp" />
+
+            <Spinner
+                android:layout_width="fill_parent"
+                android:layout_height="44dp"
+                android:id="@+id/modeSelect"
+                android:spinnerMode="dropdown"
+                android:layout_below="@+id/connectionTypeLabel"
+                android:layout_toLeftOf="@+id/btnConnect"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_column="1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/vehTelemRow2">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Altitude:"
+                android:id="@+id/altitudeLabelTextView"
+                android:layout_column="0"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="0m"
+                android:id="@+id/altitudeValueTextView"
+                android:layout_column="1"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_gravity="left" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/vehTelemRow3">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Speed:"
+                android:id="@+id/speedLabelTextView"
+                android:layout_column="0"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="0m/s"
+                android:id="@+id/speedValueTextView"
+                android:layout_column="1"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_gravity="left" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/vehTelemRow4">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Distance:"
+                android:id="@+id/distanceLabelTextView"
+                android:layout_column="0"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="0m"
+                android:id="@+id/distanceValueTextView"
+                android:layout_column="1"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_gravity="left" />
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/vehTelemRow5">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Battery voltage:"
+                android:id="@+id/batteryVoltageLabelTextView"
+                android:layout_column="0"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="0v"
+                android:id="@+id/batteryVoltageValueTextView"
+                android:layout_column="1"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_gravity="left" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/vehTelemRow6">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Battery current:"
+                android:id="@+id/batteryCurrentLabelTextView"
+                android:layout_column="0"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="0A"
+                android:id="@+id/batteryCurrentValueTextView"
+                android:layout_column="1"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_gravity="left" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/vehTelemRow7">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Battery discharge:"
+                android:id="@+id/batteryDischargeLabelTextView"
+                android:layout_column="0"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="0%"
+                android:id="@+id/batteryDischargeValueTextView"
+                android:layout_column="1"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_gravity="left" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/vehTelemRow8">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Battery remain:"
+                android:id="@+id/batteryRemainLabelTextView"
+                android:layout_column="0"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="0%"
+                android:id="@+id/batteryRemainValueTextView"
+                android:layout_column="1"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_gravity="left" />
+        </TableRow>
+
+
+    </TableLayout>
+
+</RelativeLayout>
