@@ -35,7 +35,7 @@ import com.o3dr.services.android.lib.drone.property.VehicleMode;
 
 import java.util.List;
 
-
+// See http://droidplanner.github.io/3DRServices/index.html
 public class MainActivity extends ActionBarActivity implements DroneListener, TowerListener {
 
     private ControlTower controlTower;
